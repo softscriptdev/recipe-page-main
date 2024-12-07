@@ -1,0 +1,37 @@
+---
+const { img, title, text } = Astro.props;
+---
+
+<img src={"/" + img} alt="Food" />
+<header>
+  <h1>{title}</h1>
+  <p>{text}</p>
+</header>
+
+<style lang="scss">
+  img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    @media (min-width: 600px) {
+      max-width: 1000px;
+      display: block;
+      margin-inline: auto;
+      border-radius: 0.75rem;
+      margin-top: 1rem;
+    }
+  }
+  header {
+    h1 {
+      padding: 1.5rem 1rem 1rem;
+      text-align: center;
+      font-size: 3rem;
+      text-wrap: balance;
+    }
+    p {
+      text-wrap: balance;
+      text-align: justify;
+      font-size: 1.25rem;
+      padding: 0 1rem 1.5rem;
+    }
+  }
+</style>

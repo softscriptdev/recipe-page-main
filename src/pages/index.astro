@@ -1,0 +1,93 @@
+---
+import Header from "../components/Header.astro";
+import PreparationTime from "../components/PreparationTime.astro";
+import Ingredients from "../components/Ingredients.astro";
+import Nutrition from "../components/Nutrition.astro";
+import Instructions from "../components/Instructions.astro";
+
+const headerdata = {
+  img: "image-omelette.jpeg",
+  title: "Simple Omelette Recipe",
+  text: "An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.",
+};
+
+const preparationtime = {
+  Total: "Approximately 10 minutes",
+  Preparation: "5 minutes",
+  Cooking: "5 minutes",
+};
+
+const nutritiondata = {
+  Calories: "277kcal",
+  Carbs: "0g",
+  Protein: "20g",
+  Fat: "22g",
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Recipe page</title>
+  </head>
+  <body>
+    <main>
+      <Header {...headerdata} />
+      <PreparationTime {...preparationtime} />
+      <Ingredients />
+      <Instructions />
+      <Nutrition {...nutritiondata} />
+    </main>
+  </body>
+</html>
+
+<style lang="scss" is:global>
+  body {
+    background: hsl(30, 54%, 90%);
+
+    & > * {
+      background: #fff;
+    }
+    main {
+      padding-inline: 1rem;
+    }
+  }
+  body > *:not(body > img) {
+    @media (min-width: 600px) {
+      max-width: 1000px;
+      display: block;
+      margin-inline: auto;
+      padding: 1rem;
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  h2 {
+    color: hsl(14, 45%, 36%);
+    font-size: 1.75rem;
+    padding-block: 1rem;
+  }
+
+  hr {
+    border-width: 2px;
+    opacity: 0.2;
+    margin-block: 1rem;
+    display: block;
+    width: 80%;
+    margin-inline: auto;
+  }
+</style>

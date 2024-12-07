@@ -1,0 +1,33 @@
+---
+const Ingredientsdata = [
+  "2-3 large eggs",
+  "Salt, to taste",
+  "Pepper, to taste",
+  "1 tablespoon of butter or oil",
+  "Optional fillings: cheese, diced vegetables, cooked meats, herbs",
+];
+---
+
+<article>
+  <h2>Ingredients</h2>
+  <ul>
+    {Ingredientsdata.map((ingredient) => <li>{ingredient}</li>)}
+  </ul>
+</article>
+<hr />
+
+<style lang="scss">
+  article {
+
+    ul {
+      margin-left: 1rem;
+      li {
+        font-size: 1.25rem;
+        padding-left: 0.3rem;
+        & + li {
+          margin-top: 0.25rem;
+        }
+      }
+    }
+  }
+</style>
