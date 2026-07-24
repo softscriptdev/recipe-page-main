@@ -55,22 +55,23 @@ const nutritiondata = {
 <style lang="scss" is:global>
   body {
     background: hsl(30, 54%, 90%);
+    margin: 0;
+    @media (width > 600px) {
+      max-width: 1000px;
+      display: block;
+      margin: 1rem auto;
+    }
 
     & > * {
       background: #fff;
     }
     main {
-      padding-inline: 1rem;
-    }
-  }
-  body > *:not(body > img) {
-    @media (min-width: 600px) {
-      max-width: 1000px;
-      display: block;
-      margin-inline: auto;
       padding: 1rem;
+      border-radius: 0.75rem;
+      transition: 500ms ease-in-out;
     }
   }
+
   * {
     margin: 0;
     padding: 0;
@@ -78,8 +79,13 @@ const nutritiondata = {
   }
   h2 {
     color: hsl(14, 45%, 36%);
-    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 2.5dvw, 2rem);
     padding-block: 1rem;
+  }
+
+  p,
+  li {
+    font-size: clamp(1.25rem, 2dvw, 1.3rem);
   }
 
   hr {

@@ -12,25 +12,23 @@ const { img, title, text } = Astro.props;
   img {
     width: 100%;
     aspect-ratio: 16/9;
+    border-radius: 0.75rem;
     @media (min-width: 600px) {
       max-width: 1000px;
       display: block;
       margin-inline: auto;
-      border-radius: 0.75rem;
-      margin-top: 1rem;
     }
   }
   header {
     h1 {
       padding: 1.5rem 1rem 1rem;
       text-align: center;
-      font-size: 3rem;
+      font-size: clamp(1.75rem,4dvw, 2.75rem);
       text-wrap: balance;
     }
     p {
       text-wrap: balance;
       text-align: justify;
-      font-size: 1.25rem;
       padding: 0 1rem 1.5rem;
     }
   }
